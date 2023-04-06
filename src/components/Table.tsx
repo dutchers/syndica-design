@@ -41,7 +41,7 @@ export default function Table({ rows, headers }: TableProps) {
       <div className={styles.table__mobile}>
         {rows.map((row, idx) => {
           return (
-            <div className={styles.row}>
+            <div className={styles.row} key={idx}>
               {Object.keys(row).map((col: string, i: number) => {
                 return (
                   <div className={styles.cell} key={i}>
