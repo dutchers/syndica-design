@@ -17,9 +17,11 @@ export default function Table({ rows, headers }: TableProps) {
     <>
       <div className={styles.table}>
         <div className={`${styles.row} ${styles.thead}`}>
-          {headers.map((header) => {
+          {headers.map((header, j) => {
             return (
-              <div className={`${styles.cell} ${styles.header}`}>{header}</div>
+              <div className={`${styles.cell} ${styles.header}`} key={j}>
+                {header}
+              </div>
             );
           })}
         </div>

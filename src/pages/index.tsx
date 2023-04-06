@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, MouseEventHandler } from 'react';
 import Head from 'next/head';
 import Table from '@/components/Table';
 import Chart from '@/components/Chart';
@@ -47,15 +47,17 @@ const headers = ['Year', 'Amount', 'Group', 'Description'];
 
 export default function Home() {
   const [rows, setRows] = useState(initialState);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const handleScroll = (e) => {
-    const container = containerRef.current.getBoundingClientRect();
-    window.scrollTo({
-      top: container.top,
-      left: 0,
-      behavior: 'smooth',
-    });
+  const handleScroll: MouseEventHandler<HTMLButtonElement> = (e) => {
+    if (containerRef.current) {
+      const container = containerRef.current.getBoundingClientRect();
+      window.scrollTo({
+        top: container.top,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }
   };
   return (
     <>

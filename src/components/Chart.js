@@ -23,15 +23,18 @@ ChartJS.register(
 
 export default function Chart() {
   const chartRef = useRef(null);
-  const [background, setBackground] = useState('');
+  const [background, setBackground] = useState();
 
   useEffect(() => {
     if (chartRef.current) {
       const bar_ctx = chartRef.current.canvas.getContext('2d');
-      const background_1 = bar_ctx.createLinearGradient(0, 0, 0, 500);
-      background_1.addColorStop(0, '#5E94E4');
-      background_1.addColorStop(1, '#5245E4');
-      setBackground(background_1);
+      if (bar_ctx) {
+        console.log(bar_ctx);
+        const background_1 = bar_ctx.createLinearGradient(0, 0, 0, 500);
+        background_1.addColorStop(0, '#5E94E4');
+        background_1.addColorStop(1, '#5245E4');
+        setBackground(background_1);
+      }
     }
   }, []);
 
