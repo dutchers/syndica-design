@@ -35,17 +35,17 @@ export default function Chart() {
     }
   }, []);
 
-  const setInitialLayout = () => {
-    // if (window.innerWidth > 768) {
-    //   return 'desktop';
-    // } else {
-    //   return 'mobile';
-    // }
-  };
-
-  const [layout, setLayout] = useState(setInitialLayout());
+  const [layout, setLayout] = useState('');
 
   useEffect(() => {
+    const setInitialLayout = () => {
+      if (window.innerWidth > 768) {
+        setLayout('desktop');
+      } else {
+        setLayout('mobile');
+      }
+    };
+
     const handleResize = () => {
       if (window.innerWidth > 768) {
         setLayout('desktop');
@@ -53,6 +53,8 @@ export default function Chart() {
         setLayout('mobile');
       }
     };
+
+    setInitialLayout();
 
     window.addEventListener('resize', handleResize);
   }, []);
@@ -74,12 +76,16 @@ export default function Chart() {
 
   return (
     <div className={styles.chart__root}>
-      <Bar
-        data={data}
-        options={layout === 'mobile' ? mobileOptions : options}
-        ref={chartRef}
-        width='800'
-      />
+      <div className={styles['chart__root-inner']}>
+        <div className={styles['chart__root-container']}>
+          <Bar
+            data={data}
+            options={layout === 'mobile' ? mobileOptions : options}
+            ref={chartRef}
+            width='800'
+          />
+        </div>
+      </div>
     </div>
   );
 }

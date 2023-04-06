@@ -3,6 +3,7 @@ const onResize = (el, size) => {
 };
 const options = {
   onResize: onResize,
+  maintainAspectRatio: false,
   responsive: true,
   aspectRatio: 2,
   scales: {
@@ -49,6 +50,7 @@ const options = {
 
 const mobileOptions = {
   onResize: onResize,
+  maintainAspectRatio: false,
   responsive: true,
   aspectRatio: 1,
   scales: {
