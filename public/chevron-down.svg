@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#5245e4" class="bi bi-chevron-down" viewBox="0 0 16 16">
+<defs>
+ <linearGradient id="Gradient1" x1="0" x2="0" y1="0" y2="1">
+      <stop class="stop1" offset="0%" />
+      <stop class="stop2" offset="100%" />
+    </linearGradient>
+</defs>
+<style>
+      <![CDATA[
+              #chevron { fill: url(#Gradient1); }
+              .stop1 { stop-color: #E45E5E; }
+              .stop2 { stop-color: #E4865E; }
+            ]]>
+    </style>
+  <path id="chevron" fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+</svg>
