@@ -8,6 +8,12 @@ const options = {
   aspectRatio: 2,
   scales: {
     y: {
+      title: {
+        display: true,
+        text: 'Amount',
+        color: '#ffffff',
+        size: 16,
+      },
       beginAtZero: true,
       drawTicks: false,
       max: 100,
@@ -23,6 +29,12 @@ const options = {
       },
     },
     x: {
+      title: {
+        display: true,
+        text: 'Year',
+        color: '#ffffff',
+        size: 16,
+      },
       grid: {
         display: false,
       },
@@ -37,6 +49,7 @@ const options = {
   },
   plugins: {
     legend: {
+      display: false,
       labels: {
         color: 'white',
         font: {
@@ -55,6 +68,12 @@ const mobileOptions = {
   aspectRatio: 1,
   scales: {
     y: {
+      title: {
+        display: true,
+        text: 'Year',
+        color: '#ffffff',
+        size: 16,
+      },
       type: 'category',
       ticks: {
         color: 'white',
@@ -68,6 +87,12 @@ const mobileOptions = {
       },
     },
     x: {
+      title: {
+        display: true,
+        text: 'Amount',
+        color: '#ffffff',
+        size: 16,
+      },
       type: 'linear',
       beginAtZero: true,
       drawTicks: false,
@@ -86,6 +111,7 @@ const mobileOptions = {
   },
   plugins: {
     legend: {
+      display: false,
       labels: {
         color: 'white',
         font: {
